@@ -1,0 +1,3 @@
+[submodule "wasm-graphics"]
+	path = wasm-graphics
+	url = git@github.com:clshu/wasm-graphics.git
