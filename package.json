@@ -23,6 +23,8 @@
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "@webpack-cli/generators": "^2.5.0",
     "babel-loader": "^8.2.5",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "webpack": "^5.74.0",

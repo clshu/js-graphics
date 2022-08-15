@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
@@ -30,6 +31,7 @@ const config = {
     new WasmPackPlugin({
       crateDirectory: path.resolve(__dirname, './wasm-graphics/pkg'),
     }),
+    new FaviconsWebpackPlugin('./favicon.ico'),
   ],
   module: {
     rules: [

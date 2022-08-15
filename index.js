@@ -4,4 +4,4 @@ rust
   .then((m) => {
     m.say_hello_from_rust();
   })
-  .catch(console.error);
+  .catch((err) => console.error(err.message));
