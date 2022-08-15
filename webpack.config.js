@@ -1,14 +1,15 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production'
+const isProduction = process.env.NODE_ENV == 'production';
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
-  : 'style-loader'
+  : 'style-loader';
 
 const config = {
   entry: './index.js',
@@ -26,6 +27,9 @@ const config = {
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    new WasmPackPlugin({
+      crateDirectory: path.resolve(__dirname, './wasm-graphics/pkg'),
+    }),
   ],
   module: {
     rules: [
@@ -50,15 +54,15 @@ const config = {
     asyncWebAssembly: true,
     syncWebAssembly: true,
   },
-}
+};
 
 module.exports = () => {
   if (isProduction) {
-    config.mode = 'production'
+    config.mode = 'production';
 
-    config.plugins.push(new MiniCssExtractPlugin())
+    config.plugins.push(new MiniCssExtractPlugin());
   } else {
-    config.mode = 'development'
+    config.mode = 'development';
   }
-  return config
-}
+  return config;
+};
