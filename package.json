@@ -9,7 +9,7 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
-    "build:wasm": "cd wasm-graphics && wasm-pack build --target web",
+    "build:wasm": "cd wasm-graphics && wasm-pack build",
     "clean:wasm": "cd wasm-graphics && cargo clean && rm -rf ./pkg",
     "watch": "webpack --watch",
     "serve": "webpack serve"
