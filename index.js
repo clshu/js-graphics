@@ -9,9 +9,6 @@ rust
       alert('Failed to initialize webGL');
     }
 
-    gl.enable(gl.BLEND); // fade in/out
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-
     const FPS_THROTTLE = 1000.0 / 30.0; // milliseconds / frames
     let lastFrameTime = -1; // In milliseconds
     const dougClient = new m.DougClient();
